@@ -41,13 +41,6 @@ namespace BSTree {
 			_root(nullptr)
 		{}
 
-		//BinarySearchTree() {
-
-		//}
-
-		//void Destroy(TreeNode<T> * root) {
-
-		//}
 		bool Insert(const T & data) {
 
 			// 如果根为nullptr,直接插入
@@ -111,7 +104,6 @@ namespace BSTree {
 				}
 			}
 
-			// 如果遍历到最后,cur == nullptr,说明不存在,直接返回false
 			if (cur == nullptr)
 				return false;
 
@@ -123,10 +115,9 @@ namespace BSTree {
 				
 				// 直接往最右叶子结点查找
 				if (cur2->_right) {
+					
 					for (; cur2->_right; pre2 = cur2, cur2 = cur2->_right);
-					// 让pre2指向最右叶子结点的左孩子
 					pre2->_right = cur2->_left;
-					// cur2指向cur的左孩子结点
 					cur2->_left = cur->_left;
 				}
 				// cur2指向cur的右孩子
