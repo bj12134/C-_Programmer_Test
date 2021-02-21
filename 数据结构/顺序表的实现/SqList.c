@@ -58,4 +58,10 @@ void find(SqList* sq, int pos) {
 	printf("pos:%d-%d\n", pos, sq->elem[pos]);
 }
 // 5.Ïú»Ù
-void destory(SqList* sq);
+void destory(SqList* sq){
+	if(sq != NULL){
+		free(sq->elem);
+		sq->elem = NULL;
+		sq->elem_num = sq->space_size = 0;
+	}
+}
